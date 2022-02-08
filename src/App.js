@@ -1,14 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
-import MarvelCharactersProvider from './context/MarvelCharacters';
-import MarvelHome from './pages/Home';
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import MarvelCharactersProvider from "./context/MarvelCharacters";
+import MarvelHome from "./pages/Home";
 
 function App() {
   return (
     <div className="App">
-     <MarvelCharactersProvider>
-       <MarvelHome/>
-     </MarvelCharactersProvider>
+      <MarvelCharactersProvider>
+        <Routes>
+          <Route path="/" element={<MarvelHome />} />
+        </Routes>
+      </MarvelCharactersProvider>
     </div>
   );
 }
